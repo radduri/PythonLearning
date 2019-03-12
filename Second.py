@@ -110,4 +110,49 @@ a.flash()
 
 '''
 
+# Download image from web
 
+'''
+import random
+import urllib.request
+
+def download_web_image(url):
+    name=random.randrange(1,1000)
+    full_name = str(name) + ".jpg"
+    urllib.request.urlretrieve(url, full_name)
+
+download_web_image("https://www.google.com/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwjsytzklP3gAhWRM-wKHYAzCpoQjRx6BAgBEAU&url=https%3A%2F%2Fwww.homedepot.com%2Fp%2FMea-Nursery-FRAGRANT-Red-Mister-Lincoln-Rose-62014%2F304937447&psig=AOvVaw2fEAVroMI5IypIILxDDmKV&ust=1552499315339750")
+
+'''
+
+# Read and write files
+'''
+fw = open('test.txt', 'w')
+fw.write("Hello Ram, How Are You")
+fw.write("I lile becon")
+fw.close()
+
+fr = open('test.txt','r')
+print(fr.read())
+fr.close()
+'''
+
+# Download files from web
+
+from urllib import request
+
+google_url = 'https://query1.finance.yahoo.com/v7/finance/download/GOOG?period1=1549994555&period2=1552413755&interval=1d&events=history&crumb=kekH1WFqa/M'
+
+
+def download_stock_data(csv_url):
+    response = request.urlopen(csv_url)
+    csv = response.read()
+    csv_sr = str(csv)
+    lines = csv_sr.split("\\n")
+    fw = open(r"google.csv", 'w')
+    for line in lines:
+        fw.writeline(line + '\n')
+    fw.close()
+
+
+download_stock_data(google_url)
