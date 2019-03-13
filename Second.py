@@ -138,7 +138,7 @@ fr.close()
 '''
 
 # Download files from web
-
+'''
 from urllib import request
 
 google_url = 'https://query1.finance.yahoo.com/v7/finance/download/GOOG?period1=1549994555&period2=1552413755&interval=1d&events=history&crumb=kekH1WFqa/M'
@@ -156,3 +156,21 @@ def download_stock_data(csv_url):
 
 
 download_stock_data(google_url)
+
+'''
+
+#  Exceptions
+
+while True:
+    try:
+        number =int(input("Enter Number:"))
+        print(str(18/number))
+        break
+    except ValueError:
+        print("Enter a proper value")
+    except Exception:
+        break
+    finally:
+        print("loop end")
+
+
